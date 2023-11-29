@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Menu Card</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+  <!-- We import arjs version without NFT but with marker + location based support -->
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  <script src="https://raw.githack.com/fcor/arjs-gestures/master/dist/gestures.js"></script>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+
+  <!-- SweetAlert -->
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+
+
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
+
+  <script>
+  //Firebase config here
+  const firebaseConfig = {
+  apiKey: "AIzaSyBR_Q6eZDa4VEgEvuJoSs0yx0IZ98_csXQ",
+  authDomain: "armenu-b3b6d.firebaseapp.com",
+  projectId: "armenu-b3b6d",
+  storageBucket: "armenu-b3b6d.appspot.com",
+  messagingSenderId: "477034738423",
+  appId: "1:477034738423:web:6a18b563b9be3e108699f2"
+  };
+  // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
+
+
+  <!-- Local StyleSheet -->
+  <link href="./style.css" rel="stylesheet" />
+  <script src="./js/markerHandler.js"></script>
+  <script src="./js/addMarkers.js"></script>
+  <script src="./js/addButtons.js"></script>
+</head>
+
+<body style="margin : 0px; overflow: hidden;">
+  <a-scene id="main-scene" vr-mode-ui="enabled: false" embedded
+    arjs="sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960;debugUIEnabled: false;"
+    gesture-detector create-markers create-buttons>
+    <!-- Camera -->
+    <a-entity camera></a-entity>
+  </a-scene>
+  <div id="button-div" class="fixed-bottom"></div>
+</body>
+
+</html>
